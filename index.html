@@ -14,20 +14,34 @@ heading-gallery:
   big-title: Another
   sub-title: Sick Heading for Attention
   paragraph: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo enim laboriosam fuga nulla numquam sit, illo pariatur expedita, vitae hic quidem reprehenderit dolore ipsum exercitationem. Tenetur porro at delectus odio! Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam animi nemo labore incidunt reiciendis. Iste omnis vel, iusto minus eligendi quaerat enim fugit laudantium consectetur incidunt nisi consequuntur deleniti adipisci?
-  image-1: https://images.unsplash.com/photo-1445699269025-bcc2c8f3faee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  image-1-alt:
-  image-2: https://images.unsplash.com/photo-1445699269025-bcc2c8f3faee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  image-2-alt:
-  image-3: https://images.unsplash.com/photo-1445699269025-bcc2c8f3faee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  image-3-alt:
-  image-4: https://images.unsplash.com/photo-1445699269025-bcc2c8f3faee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  image-4-alt:
-  image-5: https://images.unsplash.com/photo-1445699269025-bcc2c8f3faee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  image-5-alt:
-  image-6: https://images.unsplash.com/photo-1445699269025-bcc2c8f3faee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  image-6-alt:
+  image: 
+  - url: https://images.unsplash.com/photo-1445699269025-bcc2c8f3faee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+    alt:
+  - url: https://images.unsplash.com/photo-1445699269025-bcc2c8f3faee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+    alt:
+  - url: https://images.unsplash.com/photo-1445699269025-bcc2c8f3faee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+    alt:
+  - url: https://images.unsplash.com/photo-1445699269025-bcc2c8f3faee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+    alt:
+  - url: https://images.unsplash.com/photo-1445699269025-bcc2c8f3faee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+    alt:
+  - url: https://images.unsplash.com/photo-1445699269025-bcc2c8f3faee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+    alt:
   button-text: Sign up
-  button-url:
+  button-url: www.google.com
+grid-text:
+  - title: Heading
+    paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio assumenda et odit ex, dolorema.
+  - title: Heading
+    paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio assumenda et odit ex, dolorema.
+  - title: Heading
+    paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio assumenda et odit ex, dolorema.
+  - title: Heading
+    paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio assumenda et odit ex, dolorema.
+  - title: Heading
+    paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio assumenda et odit ex, dolorema.
+  - title: Heading
+    paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio assumenda et odit ex, dolorema.
 image-text-block:
   title: This is a <br> fun heading
   sub-title: Another
@@ -89,24 +103,11 @@ contact:
     </div>
     
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4 pb-5">
+      {% for item in page.heading-gallery.image %}
       <div>
-        <img src="{{page.heading-gallery.image-1}}" alt="{{page.heading-gallery.image-1-alt}}" class="aspect-square w-full object-cover">
+        <img src="{{item.url}}" alt="{{item.alt}}" class="aspect-square w-full object-cover">
       </div>
-      <div>
-        <img src="{{page.heading-gallery.image-2}}" alt="{{page.heading-gallery.image-2-alt}}" class="aspect-square w-full object-cover">
-      </div>
-      <div>
-        <img src="{{page.heading-gallery.image-3}}" alt="{{page.heading-gallery.image-3-alt}}" class="aspect-square w-full object-cover">
-      </div>
-      <div>
-        <img src="{{page.heading-gallery.image-4}}" alt="{{page.heading-gallery.image-4-alt}}" class="aspect-square w-full object-cover">
-      </div>
-      <div>
-        <img src="{{page.heading-gallery.image-5}}" alt="{{page.heading-gallery.image-5-alt}}" class="aspect-square w-full object-cover">
-      </div>
-      <div>
-        <img src="{{page.heading-gallery.image-6}}" alt="{{page.heading-gallery.image-6-alt}}" class="aspect-square w-full object-cover">
-      </div>
+      {% endfor %}
     </div>
     
     {% if page.heading-gallery.button-url %}
@@ -115,6 +116,21 @@ contact:
     </div>
     {% endif %}
   </section>
+
+
+
+  <!-----Grid with text-->
+
+<section class="mt-20">
+  <div class="grid grid-cols-6 gap-10 container mx-auto px-8 ">
+    {% for item in page.grid-text %}
+      <div class="col-span-3 sm:col-span-2 pb-10 ">
+          <h2 class="font-semibold uppercase text-lg pb-1"> {{item.title}} </h2>
+          <p> {{item.paragraph}} </p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
   
   
   
