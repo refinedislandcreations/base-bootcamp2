@@ -36,6 +36,8 @@ image-text-block:
   paragraph-2: Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dicta pariatur eius aliquam harum inventore quam animi neque, odio saepe cupiditate, corrupti et quaerat obcaecati officia ducimus officiis, ullam aperiam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam architecto, vel aut repudiandae recusandae vitae nesciunt dolore enim sunt quasi at sit dicta necessitatibus quaerat aliquid totam odit unde cumque.
   button-url:
   button-text: Sign up
+  image-desktop-position: left
+  image-mobile-position: top
   image: https://images.unsplash.com/photo-1500491460312-c32fc2dbc751?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
   image-alt:
 big-text-block: Sometimes all you need is a big random block of text to really drive home the point.
@@ -78,8 +80,12 @@ contact:
   <!----------Gallery----------->
   <section class="container mx-auto px-8">
     <div class="sm:mt-8 mb-2 sm:mb-8 max-w-2xl m-auto text-left sm:text-center">
+      {% if page.heading-gallery.big-title %}
       <h2 class="text-3xl sm:text-5xl font-extrabold uppercase pb-1 sm:pb-3">{{page.heading-gallery.big-title}} <span class="text-base sm:text-lg normal-case block">{{page.heading-gallery.sub-title}}</span></h2>
+      {% endif %}
+      {% if page.heading-gallery.paragraph %}
       <p>{{page.heading-gallery.paragraph}}</p>
+      {% endif %}
     </div>
     
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4 pb-5">
@@ -103,9 +109,11 @@ contact:
       </div>
     </div>
     
+    {% if page.heading-gallery.button-url %}
     <div class="flex justify-center">
       <a href="{{page.heading-gallery.button-url}}" class="btn-primary">{{page.heading-gallery.button-text}}</a>
     </div>
+    {% endif %}
   </section>
   
   
@@ -128,7 +136,7 @@ contact:
     
         <a href="{{page.image-text-block.button-url}}" class="btn-primary">{{page.image-text-block.button-text}}</a>
       </div>
-      <div class="h-full order-first">
+      <div class="h-full {% if page.image-text-block.image-mobile-position == 'top' %} order-first {% endif %} {% if page.image-text-block.image-desktop-position == 'left' %} sm:order-first {% else %} sm:order-last {% endif %} ">
         <img src="{{page.image-text-block.image}}" alt="{{page.image-text-block.image-alt}}" class="w-full h-full object-cover">
       </div>
     
