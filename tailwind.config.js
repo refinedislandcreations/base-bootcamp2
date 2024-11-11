@@ -10,4 +10,12 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  darkMode: 'selector',
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
 }
