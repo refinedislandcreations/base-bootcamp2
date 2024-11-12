@@ -10,7 +10,8 @@ header:
   fact-2: Y2K
   fact-3: 420K
   paragraph: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus debitis eligendi ipsum numquam culpa non, laudantium itaque alias, atque fuga ipsam temporibus dolorum ullam cum fugiat possimus error eum esse!
-heading-gallery:
+blocks:
+- _id: big-gallery
   big-title: Another
   sub-title: Sick Heading for Attention
   paragraph: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo enim laboriosam fuga nulla numquam sit, illo pariatur expedita, vitae hic quidem reprehenderit dolore ipsum exercitationem. Tenetur porro at delectus odio! Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam animi nemo labore incidunt reiciendis. Iste omnis vel, iusto minus eligendi quaerat enim fugit laudantium consectetur incidunt nisi consequuntur deleniti adipisci?
@@ -29,7 +30,8 @@ heading-gallery:
     alt:
   button-text: Sign up
   button-url: www.google.com
-grid-text:
+- _id: grid-text
+  items:
   - title: Heading
     paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio assumenda et odit ex, dolorema.
   - title: Heading
@@ -42,7 +44,7 @@ grid-text:
     paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio assumenda et odit ex, dolorema.
   - title: Heading
     paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio assumenda et odit ex, dolorema.
-image-text-block:
+- _id: text-image
   title: This is a <br> fun heading
   sub-title: Another
   smaller-title: Sick Heading for Attention
@@ -54,15 +56,16 @@ image-text-block:
   image-mobile-position: top
   image: https://images.unsplash.com/photo-1500491460312-c32fc2dbc751?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
   image-alt:
-big-text-block: Sometimes all you need is a big random block of text to really drive home the point.
-sideways-with-text:
-sideways-with-text:
+- _id: big-text
+  text: Sometimes all you need is a big random block of text to really drive home the point.
+- _id: rotate-heading
   title: Gallery
   paragraph-1: Lorem ipsum dolor sit amet consectetur adipisicing elit. Est iste reiciendis placeat, molestias autem incidunt aut iure, eos veritatis illum itaque eveniet magni, blanditiis animi veniam. Pariatur tenetur magni vero?
   paragraph-2: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione error harum eligendi quasi, perferendis soluta! Illo ea optio alias tenetur, sit dicta fugiat magnam, tempora natus quidem ut error quaerat. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque id corrupti temporibus neque quaerat facere repudiandae eius explicabo iure cumque quidem sapiente, vel beatae facilis dolor nostrum sequi quo cum.
   button-url:
   button-text: Sign up
-horizontal-gallery:
+- _id: horizontal-gallery
+  items:
   - image: https://images.unsplash.com/photo-1615192232476-758a110dac9f?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
     alt:
   - image: https://images.unsplash.com/photo-1520262494112-9fe481d36ec3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
@@ -75,7 +78,7 @@ horizontal-gallery:
     alt:
   - image: https://images.unsplash.com/photo-1520262494112-9fe481d36ec3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
     alt: 
-contact:
+- _id: contact-form
   title: Contact Us.
   name-label: Any name will do
   name-placeholder: Name
@@ -89,160 +92,20 @@ contact:
 ---
 
   
-  
-  
-  <!----------Gallery----------->
-  <section class="container mx-auto px-8">
-    <div class="sm:mt-8 mb-2 sm:mb-8 max-w-2xl m-auto text-left sm:text-center">
-      {% if page.heading-gallery.big-title %}
-      <h2 class="text-3xl sm:text-5xl font-extrabold uppercase pb-1 sm:pb-3">{{page.heading-gallery.big-title}} <span class="text-base sm:text-lg normal-case block">{{page.heading-gallery.sub-title}}</span></h2>
-      {% endif %}
-      {% if page.heading-gallery.paragraph %}
-      <p>{{page.heading-gallery.paragraph}}</p>
-      {% endif %}
-    </div>
-    
-    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4 pb-5">
-      {% for item in page.heading-gallery.image %}
-      <div>
-        <img src="{{item.url}}" alt="{{item.alt}}" class="aspect-square w-full object-cover">
-      </div>
-      {% endfor %}
-    </div>
-    
-    {% if page.heading-gallery.button-url %}
-    <div class="flex justify-center">
-      <a href="{{page.heading-gallery.button-url}}" class="btn-primary">{{page.heading-gallery.button-text}}</a>
-    </div>
-    {% endif %}
-  </section>
+ 
 
 
-
-  <!-----Grid with text-->
-
-<section class="mt-20">
-  <div class="grid grid-cols-6 gap-10 container mx-auto px-8 ">
-    {% for item in page.grid-text %}
-      <div class="col-span-3 sm:col-span-2 pb-10 ">
-          <h2 class="font-semibold uppercase text-lg pb-1"> {{item.title}} </h2>
-          <p> {{item.paragraph}} </p>
-      </div>
-    {% endfor %}
-  </div>
-</section>
-  
-  
-  
-  <!----------Text Image Section----------->
-  
-  <section class="container mx-auto px-8">
-    <div class="mt-12 sm:mt-24 mb-2 sm:mb-8">
-      <h1 class="text-3xl sm:text-5xl font-extrabold uppercase">{{page.image-text-block.title}}</h1>
-    </div>
-    
-    
-    <div class="flex flex-col sm:grid sm:grid-cols-2 h-full sm:gap-4">
-      <div>
-        <p class="uppercase font-bold text-base mt-2 sm:mt-0 pb-2 sm:pb-8">{{page.image-text-block.sub-title}}<br><span class="font-normal normal-case text-sm border-t-2">{{page.image-text-block.smaller-title}}</span></p>
-    
-        <p class="pb-2 sm:pb-4">{{page.image-text-block.paragraph-1}}</p>
-    
-        <p class="pb-4 sm:pb-8">{{page.image-text-block.paragraph-2}}</p>
-    
-        <a href="{{page.image-text-block.button-url}}" class="btn-primary">{{page.image-text-block.button-text}}</a>
-      </div>
-      <div class="h-full {% if page.image-text-block.image-mobile-position == 'top' %} order-first {% endif %} {% if page.image-text-block.image-desktop-position == 'left' %} sm:order-first {% else %} sm:order-last {% endif %} ">
-        <img src="{{page.image-text-block.image}}" alt="{{page.image-text-block.image-alt}}" class="w-full h-full object-cover">
-      </div>
-    
-    </div>
-  </section>
-  
-  
-
-  
-  <!-------Big Block of Text-------->
-  <div class="container mx-auto px-8">
-    <div class="border-t-2 border-b-2 text-center my-20 sm:my-32">
-      <div class="py-6 sm:px-12 sm:py-12">
-        <h3 class="text-3xl sm:text-5xl font-extrabold uppercase">{{page.big-text-block}}</h3>
-      </div>
-    </div>
-  </div>
-  
-
-  <!----------Rotate text-------->
-  
-  <div class="container sm:px-8 mt-5 sm:mt-10 mb-10 sm:mb-24">
-  
-      <div class="relative">
-          <p class="[writing-mode:vertical-rl] rotate-180 absolute left-0 text-5xl font-extrabold uppercase"> {{page.sideways-with-text.title}} </p>
-  
-      <p class="pb-4 ml-14 sm:ml-20 mr-2 sm:mr-0"> {{page.sideways-with-text.paragraph-1}} </p>
-      <p class="pb-4 ml-14 sm:ml-20 mr-2 sm:mr-0"> {{page.sideways-with-text.paragraph-2}} </p>
-      <a href="{{page.sideways-with-text.button-url}}" class="btn-primary ml-14 sm:ml-20 mr-2 sm:mr-0 mt-2 sm:mt-10">{{page.sideways-with-text.button-text}}</a>
-      </div>
-  
-  </div>
-  
-  
-  
-  <!----Gallery------->
-  
-  <div class="container mx-auto px-8 mt-5 sm:mt-10 flex overflow-x-auto gap-4">
-
-    {% for item in page.horizontal-gallery %}
-    
-      <img src="{{item.image}}" alt="{{item.alt}}" class="w-2/3 sm:w-1/4 object-contain shrink-0">
-  
-    {% endfor %}
-      
-    
-  </div>
-  
-  
 
 
 
   
-  <!----------Contact-------------->
   
   
-  <div class="container mx-auto px-8 mt-20 sm:mt-32 mb-5 sm:mb-12">
-    <p class="text-3xl sm:text-5xl font-extrabold uppercase pb-8">{{page.contact.title}}</p>
+
   
-    <div class="flex flex-col sm:grid grid-cols-2">
-        <div class="sm:mr-8">
-          <form name="contact" method="POST" data-netlify="true" class="mb-4">
-            <div class="mb-2">
-              <input id="fname" name="fname" type="text" placeholder="{{page.contact.name-placeholder}}" class="border-b-2 focus:border-b-black outline-none" />
-              <label for="fname" class="block"> {{page.contact.name-label}} </label>
-            </div>
-          
-            <div class="mb-2">
-              
-              <input id="email" name="email" type="email" placeholder="{{page.contact.email-placeholder}}" class="border-b-2 focus:border-b-black outline-none" />
-              <label for="email" class="block"> {{page.contact.email-label}} </label>
-            </div>
-          
-            <div class="mb-4">
-              <label for="message" class="block"> {{page.contact.message-label}} </label>
-              <textarea id="message" name="message" placeholder="{{page.contact.message-placeholder}}" rows="6" class="min-w-full border-2 focus:border-black outline-none"></textarea>
-            </div>
-          
-            <input type="hidden" name="form-name" value="contact">
-          
-            <div class="sm:text-right">
-              <button type="submit" class="btn-primary">{{page.contact.button-text}}</button>
-            </div>
-          </form>
-        </div>
-        <div>
-          <img src="{{page.contact.image}}" alt="{{page.contact.image-alt}}" class="w-full h-50 sm:h-96 object-cover">
-        </div>
-    </div>
-  </div>
+  
+
+
   
   
   

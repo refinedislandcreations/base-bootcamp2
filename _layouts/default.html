@@ -10,9 +10,17 @@
 </head>
 
 <body class=" dark:bg-black dark:text-white">
+
     {% include header.html %}
+
+    {% for block in page.blocks %}
+    <!--{{block._id}} -->
+    {% include /blocks/{{block._id}}.html %}
+    {% endfor %}
+
     {{content}}
     {% include footer.html %}
+
 </body>
 
 </html>
