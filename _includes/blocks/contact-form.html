@@ -28,7 +28,7 @@
           
             <input type="hidden" name="form-name" value="contact">
           
-            <div class="sm:text-right">
+            <div class="{% if block.button-align == 'left' %} text-left {% else %} sm:text-right {% endif %}">
               <button type="submit" class="btn-primary">{{block.button-text}}</button>
             </div>
           </form>
