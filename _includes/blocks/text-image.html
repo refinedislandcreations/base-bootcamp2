@@ -7,14 +7,17 @@
     
     
     <div class="flex flex-col sm:grid sm:grid-cols-2 h-full sm:gap-4">
-      <div>
+      <div class="flex flex-col {% if block.text-position == 'bottom' %} justify-end {% endif %} ">
         <p class="uppercase font-bold text-base mt-2 sm:mt-0 pb-2 sm:pb-8">{{block.sub-title}}<br><span class="font-normal normal-case text-sm border-t-2">{{block.smaller-title}}</span></p>
     
         <p class="pb-2 sm:pb-4">{{block.paragraph-1}}</p>
     
         <p class="pb-4 sm:pb-8">{{block.paragraph-2}}</p>
-    
-        <a href="{{block.button-url}}" class="btn-primary">{{block.button-text}}</a>
+        
+        <div>
+          <a href="{{block.button-url}}" class="btn-primary">{{block.button-text}}</a>
+        </div>
+        
       </div>
       <div class="h-full {% if block.image-mobile-position == 'top' %} order-first {% endif %} {% if block.image-desktop-position == 'left' %} sm:order-first {% else %} sm:order-last {% endif %} ">
         <img src="{{block.image}}" alt="{{block.image-alt}}" class="w-full h-full object-cover">
@@ -22,3 +25,5 @@
     
     </div>
   </section>
+
+  

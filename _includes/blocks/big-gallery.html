@@ -1,6 +1,6 @@
   <!----------Gallery----------->
   <section class="container mx-auto px-8">
-    <div class="sm:mt-8 mb-2 sm:mb-8 max-w-2xl m-auto text-left sm:text-center">
+    <div class="sm:mt-8 mb-2 sm:mb-8 max-w-2xl  text-left {% if block.text-align == 'center' %} sm:text-center m-auto {% endif %}">
       {% if block.big-title %}
       <h2 class="text-3xl sm:text-5xl font-extrabold uppercase pb-1 sm:pb-3">{{ block.big-title }} <span class="text-base sm:text-lg normal-case block">{{block.sub-title}}</span></h2>
       {% endif %}
@@ -23,3 +23,5 @@
     </div>
     {% endif %}
   </section>
+
+  
