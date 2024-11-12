@@ -899,6 +899,14 @@ video {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
+  .sm\:py-24 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  .sm\:px-24 {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
   .sm\:pb-3 {
     padding-bottom: 0.75rem;
   }
