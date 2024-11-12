@@ -34,8 +34,8 @@ _inputs:
 _structures:
   blocks:
     style: select
-    id_key:
     values:
+    - label:
 _snippets:
   _cc_jekyll_unknown_paired_tag:
     hidden: true
